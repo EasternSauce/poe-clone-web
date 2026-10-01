@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>my-project</title>
+    <title>poe-clone</title>
     <style>
       html, body { margin: 0; height: 100%; overflow: hidden; background: #000; }
       /* The canvas always fills the window; Unity matches its render resolution to this size. */
@@ -23,7 +23,7 @@
   <body>
     <canvas id="game-canvas" tabindex="-1"></canvas>
     <div id="loading" role="status" aria-live="polite">
-      <div>my-project</div>
+      <div>poe-clone</div>
       <div id="bar" role="progressbar" aria-label="Loading" aria-valuemin="0" aria-valuemax="100"><div id="bar-fill"></div></div>
       <div id="error"></div>
     </div>
@@ -92,7 +92,7 @@
         codeUrl: "Build/WebGL.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "my-project",
+        productName: "poe-clone",
         productVersion: "0.1.0",
         devicePixelRatio: pixelRatio(),
         showBanner: function (msg, type) { if (type === "error") showError(msg); else console.warn(msg); }
