@@ -90,6 +90,7 @@
       var fill = document.getElementById("bar-fill");
       var errorBox = document.getElementById("error");
       var fsButton = document.getElementById("fullscreen");
+      var minimalCombat = new URLSearchParams(window.location.search).get("minimal") === "1";
 
       function showError(message) {
         errorBox.textContent = message;
@@ -186,7 +187,7 @@
 
       // Stamped into the published page by WebBuilder; "?v=" makes every build's files new URLs,
       // so a reload after an update never mixes in cached files from the old build.
-      var BUILD_ID = "2026-10-07-restore-kill-behavior-20261007211258";
+      var BUILD_ID = "2026-10-08-minimal-combat-url-20261008083238";
       var v = BUILD_ID.indexOf("__") === 0 ? "" : "?v=" + encodeURIComponent(BUILD_ID);
 
       var config = {
@@ -212,8 +213,10 @@
           loading.classList.add("done");
           if (!standalone) fsButton.style.display = "flex";
           canvas.focus();
-          maybeShowIosHintOnce();
-          watchForUpdates();
+          if (!minimalCombat) {
+            maybeShowIosHintOnce();
+            watchForUpdates();
+          }
         }).catch(function (message) {
           showError(String(message));
         });
